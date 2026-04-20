@@ -1,0 +1,65 @@
+#!/bin/sh
+# commit-msg hook 템플릿
+# Conventional Commits 형식 강제
+#
+# 사용법:
+#   cp templates/git-hooks/commit-msg .git/hooks/commit-msg
+#   chmod +x .git/hooks/commit-msg
+
+COMMIT_MSG_FILE=$1
+COMMIT_MSG=$(cat "$COMMIT_MSG_FILE")
+
+# 자동 생성 메시지 건너뛰기 (merge, revert 등)
+if echo "$COMMIT_MSG" | grep -qE "^(Merge|Revert|fixup!|squash!)"; then
+    exit 0
+fi
+
+# 빈 줄 및 주석으로만 이루어진 경우 건너뛰기
+CONTENT=$(echo "$COMMIT_MSG" | grep -v "^#" | grep -v "^$" || true)
+if [ -z "$CONTENT" ]; then
+    exit 0
+fi
+
+# ─────────────────────────────────────────────
+# Conventional Commits 형식 검증
+# 형식: <type>(<scope>)?: <description>
+# ─────────────────────────────────────────────
+PATTERN="^(feat|fix|docs|style|refactor|test|chore|ci|build|perf|revert)(\(.+\))?(!)?: .{1,72}"
+
+if ! echo "$COMMIT_MSG" | grep -qE "$PATTERN"; then
+    echo ""
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "❌ 커밋 메시지 형식 오류"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo ""
+    echo "  올바른 형식:  <type>(<scope>): <description>"
+    echo "  Breaking:     <type>!: <description>"
+    echo ""
+    echo "  예시:"
+    echo "    feat: 카카오 로그인 추가"
+    echo "    fix(auth): 토큰 갱신 버그 수정"
+    echo "    feat(api)!: 응답 형식 변경 (breaking change)"
+    echo "    docs: README 업데이트"
+    echo ""
+    echo "  허용 타입:"
+    echo "    feat fix docs style refactor test chore ci build perf revert"
+    echo ""
+    echo "  작성한 메시지:"
+    echo "    $COMMIT_MSG"
+    echo ""
+    exit 1
+fi
+
+# ─────────────────────────────────────────────
+# 제목 길이 검사 (72자 초과 경고)
+# ─────────────────────────────────────────────
+FIRST_LINE=$(echo "$COMMIT_MSG" | head -1)
+if [ ${#FIRST_LINE} -gt 72 ]; then
+    echo ""
+    echo "⚠️  커밋 메시지 제목이 72자를 초과합니다 (${#FIRST_LINE}자)"
+    echo "   더 간결하게 줄이는 것을 권장합니다."
+    echo ""
+    # 경고만, 차단하지 않음 (exit 0)
+fi
+
+exit 0
