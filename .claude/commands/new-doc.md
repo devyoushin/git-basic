@@ -14,12 +14,12 @@
 
 ## 실행 내용
 
-1. `templates/` 의 문서 템플릿 로드
-2. `rules/doc-writing.md` 규칙 적용
+1. `docs/templates/` 의 문서 템플릿 로드
+2. `docs/rules/doc-writing.md` 규칙 적용
 3. 카테고리에 따라 에이전트 페르소나 적용:
-   - `basics` / `workflow` / `history` → `agents/git-tutor.md`
-   - `advanced` → `agents/workflow-advisor.md`
-   - `troubleshooting` → `agents/rescue-agent.md`
+   - `basics` / `workflow` / `history` → `docs/agents/git-tutor.md`
+   - `advanced` → `docs/agents/workflow-advisor.md`
+   - `troubleshooting` → `docs/agents/rescue-agent.md`
 4. 다음 5개 섹션을 포함한 완성 문서 작성:
    - `## 1. 개요` — 무엇인지, 언제 쓰는지
    - `## 2. 원리 / 개념 설명` — 내부 동작, Before/After 시각화

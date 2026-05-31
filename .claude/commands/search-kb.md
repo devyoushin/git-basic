@@ -15,7 +15,7 @@
 
 ## 실행 내용
 
-`docs/` 및 `cheatsheets/` 전체를 대상으로 검색 후 관련 내용 요약 반환.
+`docs/` 및 `docs/cheatsheets/` 전체를 대상으로 검색 후 관련 내용 요약 반환.
 
 ### 출력 형식
 
@@ -28,9 +28,9 @@
 # 핵심 명령어
 \```
 
-### 2. cheatsheets/<파일>.md
+### 2. docs/cheatsheets/<파일>.md
 <요약>
 
 ---
-빠른 참조: `cheatsheets/daily-commands.md`
+빠른 참조: `docs/cheatsheets/daily-commands.md`
 ```

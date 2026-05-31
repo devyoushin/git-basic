@@ -23,23 +23,23 @@ git-basic/
 │   ├── collaboration/       (3개)         # PR 워크플로우, 코드리뷰, 컨벤션
 │   └── troubleshooting/     (3개)         # 자주 발생하는 문제 해결
 │
-├── cheatsheets/                           # 한눈에 보는 명령어 참조
+├── docs/cheatsheets/                           # 한눈에 보는 명령어 참조
 │   ├── daily-commands.md                  # 매일 쓰는 명령어
 │   ├── branch-strategy.md                 # 브랜치 전략 요약
 │   └── emergency.md                       # 긴급 상황 대처 (실수 복구)
 │
-├── templates/                             # 재사용 템플릿
+├── docs/templates/                             # 재사용 템플릿
 │   ├── commit-message.md                  # 커밋 메시지 템플릿
 │   ├── gitignore-collection.md            # 언어/프레임워크별 .gitignore
 │   └── git-hooks/                         # 실용 Git Hook 스크립트
 │       ├── pre-commit                     # 커밋 전 린트/테스트
 │       └── commit-msg                     # 커밋 메시지 형식 검증
 │
-├── rules/                                 # Claude 작성 규칙
+├── docs/rules/                                 # Claude 작성 규칙
 │   ├── doc-writing.md                     # 문서 스타일 가이드
 │   └── git-conventions.md                 # Git 명령어/예제 규칙
 │
-├── agents/                                # Claude 전문 에이전트
+├── docs/agents/                                # Claude 전문 에이전트
 │   ├── git-tutor.md                       # Git 개념 설명 전문가
 │   ├── workflow-advisor.md                # 브랜치/협업 전략 전문가
 │   └── rescue-agent.md                    # 실수 복구 전문가
@@ -86,7 +86,7 @@ docs/{카테고리}/{주제}.md
 4. **실무 맥락** — 혼자 쓰는 상황 vs 팀 협업 상황을 구분해서 설명
 5. **한국어 기술 문서** — 명령어/옵션은 영어 원문 그대로
 
-세부 규칙은 `rules/` 디렉토리를 참조.
+세부 규칙은 `docs/rules/` 디렉토리를 참조.
 
 ---
 

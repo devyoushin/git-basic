@@ -44,4 +44,4 @@ git gc 실행 전 (기본 90일 이내) → reflog에 기록이 있다.
 - `docs/advanced/reflog-guide.md`
 - `docs/history/reset-and-revert.md`
 - `docs/troubleshooting/undo-mistakes.md`
-- `cheatsheets/emergency.md`
+- `docs/cheatsheets/emergency.md`

@@ -15,7 +15,7 @@
 
 ## 실행 내용
 
-`agents/rescue-agent.md` 페르소나로 아래 순서로 응답:
+`docs/agents/rescue-agent.md` 페르소나로 아래 순서로 응답:
 
 ### 출력 형식
 

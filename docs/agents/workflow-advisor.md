@@ -28,8 +28,8 @@ rebase, worktree, hooks 등 고급 기능까지 실무 관점에서 안내하는
 
 ## 참조 파일
 
-- `rules/doc-writing.md`
-- `rules/git-conventions.md`
+- `docs/rules/doc-writing.md`
+- `docs/rules/git-conventions.md`
 - `docs/collaboration/`
 
 ## 사용 예시

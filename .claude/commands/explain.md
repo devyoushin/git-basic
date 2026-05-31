@@ -16,7 +16,7 @@
 
 ## 실행 내용
 
-`agents/git-tutor.md` 페르소나로 아래 형식으로 설명:
+`docs/agents/git-tutor.md` 페르소나로 아래 형식으로 설명:
 
 ### 출력 형식
 
