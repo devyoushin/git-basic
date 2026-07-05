@@ -23,23 +23,23 @@ git-basic/
 │   ├── collaboration/       (3개)         # PR 워크플로우, 코드리뷰, 컨벤션
 │   └── troubleshooting/     (3개)         # 자주 발생하는 문제 해결
 │
-├── docs/cheatsheets/                           # 한눈에 보는 명령어 참조
+├── docs/07-cheatsheets/                           # 한눈에 보는 명령어 참조
 │   ├── daily-commands.md                  # 매일 쓰는 명령어
 │   ├── branch-strategy.md                 # 브랜치 전략 요약
 │   └── emergency.md                       # 긴급 상황 대처 (실수 복구)
 │
-├── docs/templates/                             # 재사용 템플릿
+├── docs/91-templates/                             # 재사용 템플릿
 │   ├── commit-message.md                  # 커밋 메시지 템플릿
 │   ├── gitignore-collection.md            # 언어/프레임워크별 .gitignore
 │   └── git-hooks/                         # 실용 Git Hook 스크립트
 │       ├── pre-commit                     # 커밋 전 린트/테스트
 │       └── commit-msg                     # 커밋 메시지 형식 검증
 │
-├── docs/rules/                                 # Claude 작성 규칙
+├── docs/90-standards/                                 # Claude 작성 규칙
 │   ├── doc-writing.md                     # 문서 스타일 가이드
 │   └── git-conventions.md                 # Git 명령어/예제 규칙
 │
-├── docs/agents/                                # Claude 전문 에이전트
+├── docs/99-agents/                                # Claude 전문 에이전트
 │   ├── git-tutor.md                       # Git 개념 설명 전문가
 │   ├── workflow-advisor.md                # 브랜치/협업 전략 전문가
 │   └── rescue-agent.md                    # 실수 복구 전문가
@@ -74,7 +74,7 @@ docs/{카테고리}/{주제}.md
 
 - 카테고리: `basics`, `workflow`, `history`, `advanced`, `collaboration`, `troubleshooting`
 - 주제: 소문자 영어, 하이픈 구분
-- 예시: `docs/workflow/rebase-guide.md`, `docs/advanced/git-hooks-guide.md`
+- 예시: `docs/02-workflow/rebase-guide.md`, `docs/05-advanced/git-hooks-guide.md`
 
 ---
 
@@ -86,13 +86,13 @@ docs/{카테고리}/{주제}.md
 4. **실무 맥락** — 혼자 쓰는 상황 vs 팀 협업 상황을 구분해서 설명
 5. **한국어 기술 문서** — 명령어/옵션은 영어 원문 그대로
 
-세부 규칙은 `docs/rules/` 디렉토리를 참조.
+세부 규칙은 `docs/90-standards/` 디렉토리를 참조.
 
 ---
 
 ## 카테고리별 문서 목록
 
-### docs/basics/
+### docs/01-basics/
 | 파일 | 주제 |
 |------|------|
 | `setup.md` | 초기 설정, config, SSH 키 등록 |
@@ -101,7 +101,7 @@ docs/{카테고리}/{주제}.md
 | `remote.md` | remote, fetch, pull, push |
 | `clone-and-init.md` | init, clone, 로컬/리모트 관계 |
 
-### docs/workflow/
+### docs/02-workflow/
 | 파일 | 주제 |
 |------|------|
 | `merge-guide.md` | Fast-forward, 3-way merge, 충돌 해결 |
@@ -109,7 +109,7 @@ docs/{카테고리}/{주제}.md
 | `cherry-pick-guide.md` | cherry-pick 활용, 충돌 처리 |
 | `stash-guide.md` | stash 사용법, stash pop vs apply |
 
-### docs/history/
+### docs/04-history/
 | 파일 | 주제 |
 |------|------|
 | `log-and-search.md` | log 옵션, grep, pickaxe, 시각화 |
@@ -117,7 +117,7 @@ docs/{카테고리}/{주제}.md
 | `blame-and-bisect.md` | blame으로 변경자 추적, bisect로 버그 커밋 이진 탐색 |
 | `reset-and-revert.md` | reset (soft/mixed/hard), revert 차이 |
 
-### docs/advanced/
+### docs/05-advanced/
 | 파일 | 주제 |
 |------|------|
 | `reflog-guide.md` | reflog로 삭제된 커밋 복구 |
@@ -125,14 +125,14 @@ docs/{카테고리}/{주제}.md
 | `submodule-guide.md` | submodule 추가/업데이트/제거 |
 | `worktree-guide.md` | worktree로 여러 브랜치 동시 작업 |
 
-### docs/collaboration/
+### docs/03-collaboration/
 | 파일 | 주제 |
 |------|------|
 | `pr-workflow.md` | PR 생성, 리뷰, 머지 전략 |
 | `branch-strategy.md` | Git Flow, GitHub Flow, Trunk-based 비교 |
 | `commit-convention.md` | Conventional Commits, 커밋 메시지 작성법 |
 
-### docs/troubleshooting/
+### docs/06-troubleshooting/
 | 파일 | 주제 |
 |------|------|
 | `undo-mistakes.md` | 실수 복구 모음 (push 취소, 파일 복구 등) |
@@ -143,7 +143,7 @@ docs/{카테고리}/{주제}.md
 
 ## 추가 예정 주제 (백로그)
 
-- `docs/advanced/git-bisect-guide.md` — 버그 커밋 이진 탐색 심화
-- `docs/advanced/sparse-checkout.md` — 대형 레포 부분 체크아웃
-- `docs/collaboration/monorepo-strategy.md` — 모노레포 Git 전략
-- `docs/advanced/git-internals.md` — objects, refs, pack 파일 구조
+- `docs/05-advanced/git-bisect-guide.md` — 버그 커밋 이진 탐색 심화
+- `docs/05-advanced/sparse-checkout.md` — 대형 레포 부분 체크아웃
+- `docs/03-collaboration/monorepo-strategy.md` — 모노레포 Git 전략
+- `docs/05-advanced/git-internals.md` — objects, refs, pack 파일 구조
